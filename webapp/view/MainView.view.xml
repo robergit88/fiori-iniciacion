@@ -9,7 +9,10 @@
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-                    <Text text="Hola Mundo rober!!"></Text>
+                <Panel headerText="Selection screen">
+                <Label id="labelShipName" text="Ship name" class="sapUISmallMargin"></Label>
+                    
+                </Panel> 
                     </content>
 				</Page>
 			</pages>
