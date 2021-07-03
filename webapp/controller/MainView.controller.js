@@ -9,7 +9,10 @@ sap.ui.define([
 
 		return Controller.extend("packinvoice.invoices.controller.MainView", {
 			onInit: function () {
-
+                const oJSONModel = new sap.ui.json.JSONModel();
+                const oView = this.getView();
+                oJSONModel.loadData("./model/SelectionScreenMenu.json");
+                oView.setModel(oJSONModel,"selectionScreen");
 			}
 		});
 	});
