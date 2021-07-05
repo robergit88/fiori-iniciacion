@@ -3,6 +3,10 @@
     "CountryKey":"",
     "Countries": [
         {
+            "key": "",
+            "text": ""
+        },        
+        {
             "key": "Germany",
             "text": "Germany"
         },
@@ -21,7 +25,11 @@
         {
             "key": "Brasil",
             "text": "Brasil"
-        }                                
+        }, 
+        {
+            "key": "zel",
+            "text": "Nueva zelanda"
+        }                                         
     ],
     "currency":"USD"
 }

@@ -19,7 +19,7 @@
                                      forceSelection="false"
                                      items = "{selectionScreen>/Countries}">
                                      <items>
-                                     <core:Item key="{selectionScreen>/Key}" text="{selectionScreen>/text}"/>
+                                     <core:Item key="{selectionScreen>key}" text="{selectionScreen>text}"/>
                                      </items>
                              </Select>
                         </Panel> 
