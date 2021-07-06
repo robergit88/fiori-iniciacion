@@ -13,6 +13,16 @@ sap.ui.define([
                 const oView = this.getView();
                 oJSONModel.loadData("./model/SelectionScreenMenu.json");
                 oView.setModel(oJSONModel, "selectionScreen");
+            },
+
+            onFilter: function(oEvent) {
+            },
+            onClearFilter: function() {
+                //una vista puede tener muchos modelos
+                //La vista interpreta el modelo y se actualiza
+                const oModelSelScreen = this.getView().getModel("selectionScreen"); 
+                //CountryKey es la clave que se actualiza en el modelo SelectionScreenMenu
+                oModelSelScreen.setProperty("/CountryKey", "");
             }
         });
     });

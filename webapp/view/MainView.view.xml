@@ -22,6 +22,16 @@
                                      <core:Item key="{selectionScreen>key}" text="{selectionScreen>text}"/>
                                      </items>
                              </Select>
+                             <Button id="btnFilter" 
+                                     text="{i18n>btnFilter}"
+                                     icon="sap-icon://add-filter"
+                                     press="onFilter"
+                                     class="sapUiSmallMarginEnd"/>
+                             <Button id="btnClearFilter" 
+                                     text="{i18n>btnClearFilter}"
+                                     icon="sap-icon://clear-filter"
+                                     press="onClearFilter"
+                                     class="sapUiSmallMarginEnd"/>                                     
                         </Panel> 
                     </content>
 				</Page>
