@@ -8,7 +8,8 @@
 	<Shell id="shell">
 		<App id="app">
 			<pages>
-				<Page id="page" title="{i18n>title}">
+				<Page id="page" 
+                      title="{i18n>title}">
 					<content>
                         <Panel headerText="{i18n>SelectionScreen}">
                             <Label id="labelShipName" 
@@ -22,7 +23,7 @@
                              <Label id="labelCountry"
                                     text="{i18n>Country}" 
                                     class="sapUiSmallMargin"/>
-                             <Select id="slCountry" 
+                             <Select id="slCountry"
                                      selectedKey="{selectionScreen>/CountryKey}" 
                                      forceSelection="false"
                                      items = "{selectionScreen>/Countries}">

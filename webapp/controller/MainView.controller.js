@@ -11,10 +11,11 @@ sap.ui.define([
             onInit: function () {
                 //Se define un objeto modelo JSON
                 const oJSONModel = new sap.ui.model.json.JSONModel();
+                //se obtiene vista actual                
                 const oView = this.getView();
-                //el modelo es vinculado para que tome valor de un fichero 
+                //se establece desde donde se toman los  valores del modelo
                 oJSONModel.loadData("./model/SelectionScreenMenu.json");
-                //el modelo se llamará
+                //se asigna un nombre al modelo
                 oView.setModel(oJSONModel, "selectionScreen");
             },
 
@@ -26,8 +27,9 @@ sap.ui.define([
                 const oModelSelScreen = this.getView().getModel("selectionScreen");
                 //una vista puede tener muchos modelos
                 //La vista interpreta el modelo y se actualiza                
-                //CountryKey es la clave que se actualiza en el modelo SelectionScreenMenu
+                //Se inicializa valor de ShipName
                 oModelSelScreen.setProperty("/ShipName", "");
+                //Se inicializa valor de CountryKey
                 oModelSelScreen.setProperty("/CountryKey", "");
             }
         });
