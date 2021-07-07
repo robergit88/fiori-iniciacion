@@ -58,7 +58,8 @@
                                                          showMeasure : false
                                                      }}"
                                             numberUnit="{selectionScreen>/Currency}"
-                               ></ObjectListItem>
+                                            numberState="{=${ExtendedPrice} > 100 ? 'Success' : 'Error'}">
+                               </ObjectListItem>
                                </items>
                         </List>
                         </Panel>
