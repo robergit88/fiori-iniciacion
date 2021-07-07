@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="packinvoice.invoices.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" 
+                      title="{i18n>title}">
+					<content>
+                        <Panel headerText="{i18n>SelectionScreen}">
+                            <Label id="labelShipName" 
+                                   labelFor="ShipName" 
+                                   text="{i18n>ShipName}" 
+                                   class="sapUiSmallMargin"/>
+                            <Input id="ShipName"
+                                   value="{selectionScreen>/ShipName}"
+                                   width="200px" 
+                                   class="sapUiSmallMarginEnd"/>
+                             <Label id="labelCountry"
+                                    text="{i18n>Country}" 
+                                    class="sapUiSmallMargin"/>
+                             <Select id="slCountry"
+                                     selectedKey="{selectionScreen>/CountryKey}" 
+                                     forceSelection="false"
+                                     items = "{selectionScreen>/Countries}">
+                                     <items>
+                                     <core:Item key = "{selectionScreen>key}"
+                                                text= "{selectionScreen>text}"/>
+                                     </items>
+                             </Select>
+                             <Button id="btnFilter" 
+                                     text="{i18n>btnFilter}"
+                                     icon="sap-icon://add-filter"
+                                     press="onFilter"
+                                     class="sapUiSmallMarginEnd"/>
+                             <Button id="btnClearFilter" 
+                                     text="{i18n>btnClearFilter}"
+                                     icon="sap-icon://clear-filter"
+                                     press="onClearFilter"
+                                     class="sapUiSmallMarginEnd"/>                                     
+                        </Panel> 
+                        <Panel>
+                         <List id="invoiceList" 
+                               headerText="{i18n>invoiceList}"
+                               class="sapUiResponsiveMargin"
+                               width="auto"
+                               items="{/Invoices}">
+                               <items>
+                               <ObjectListItem title="{ShipName} - {Country}"
+                                               number="{ parts: [ { path:'ExtendedPrice'},
+                                                                  { path:'selectionScreen>/Currency'}],
+                                                     type: 'sap.ui.model.type.Currency',
+                                                     formatOptions: { 
+                                                         showMeasure : false
+                                                     }}"
+                                            numberUnit="{selectionScreen>/Currency}"
+                               ></ObjectListItem>
+                               </items>
+                        </List>
+                        </Panel>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+
+</mvc:View>
