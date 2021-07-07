@@ -43,6 +43,25 @@
                                      press="onClearFilter"
                                      class="sapUiSmallMarginEnd"/>                                     
                         </Panel> 
+                        <Panel>
+                         <List id="invoiceList" 
+                               headerText="{i18n>invoiceList}"
+                               class="sapUiResponsiveMargin"
+                               width="auto"
+                               items="{/Invoices}">
+                               <items>
+                               <ObjectListItem title="{ShipName} - {Country}"
+                                               number="{ parts: [ { path:'ExtendedPrice'},
+                                                                  { path:'selectionScreen>/Currency'}],
+                                                     type: 'sap.ui.model.type.Currency',
+                                                     formatOptions: { 
+                                                         showMeasure : false
+                                                     }}"
+                                            numberUnit="{selectionScreen>/Currency}"
+                               ></ObjectListItem>
+                               </items>
+                        </List>
+                        </Panel>
                     </content>
 				</Page>
 			</pages>
