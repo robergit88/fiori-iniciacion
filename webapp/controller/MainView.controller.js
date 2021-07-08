@@ -29,17 +29,22 @@ sap.ui.define([
 
                 let filters = [];
 
-                if(oData.ShipName !== ""){
+                if (oData.ShipName !== "") {
+                    //Se añade un valor de filtro de ShipName
                     filters.push(new Filter("ShipName", FilterOperator.Contains, oData.ShipName));
                 }
 
-                if(oData.CountryKey !== ""){
+                if (oData.CountryKey !== "") {
+                    //Se añade un valor de filtro de pais                    
                     filters.push(new Filter("Country", FilterOperator.EQ, oData.CountryKey));
                 }
 
+                //Se obtiene listado de facturas        
                 const oList = this.getView().byId("invoiceList");
+                //del listado se obtiene los items
                 const oBinding = oList.getBinding("items");
-                oBinding.filters(filters);
+                //Se aplica filtro a los items
+                oBinding.filter(filters);
 
             },
             onClearFilter: function () {
@@ -53,9 +58,12 @@ sap.ui.define([
                 //Se inicializa valor de CountryKey
                 oModelSelScreen.setProperty("/CountryKey", "");
 
+                //Se obtiene listado de facturas
                 const oList = this.getView().byId("invoiceList");
+                //del listado se obtiene los items
                 const oBinding = oList.getBinding("items");
-                oBinding.filters([]);
+                //se inicializa listado asignando filtro vacio                
+                oBinding.filter([]);
             }
         });
     });
