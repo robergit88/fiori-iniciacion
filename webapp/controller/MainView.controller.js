@@ -12,7 +12,9 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("packinvoice.invoices.controller.MainView", {
+
             onInit: function () {
+                
                 //Se define un objeto modelo JSON
                 const oJSONModel = new sap.ui.model.json.JSONModel();
                 //se obtiene vista actual                
